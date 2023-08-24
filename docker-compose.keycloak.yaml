@@ -1,0 +1,12 @@
+services:
+  keycloak:
+    container_name: ddev-${DDEV_SITENAME}-keycloak
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+    image: quay.io/keycloak/keycloak:latest
+    command: start-dev
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - 8080
